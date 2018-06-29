@@ -4,7 +4,7 @@
 # 
 # Computer should print a number in that range and ask the user about it.
 # User can answer if the number is equal, greater than or less than what she had thought.
-# The game continues till computer finds the number that user had thought of.
+# The game continues till computer finds the number that user had thought of..
 from typing import Any
 
 lowest_num=0
@@ -35,6 +35,7 @@ while feedback != equal:
 
     else:
         print("Sorry, I dont't understand. Please enter 'equal', 'greater than' or 'less than' for me.")
+        
 
 
 
