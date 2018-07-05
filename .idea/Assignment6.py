@@ -7,6 +7,13 @@
 # The game continues till computer finds the number that user had thought of..
 from typing import Any
 
+#Logic: start with guess = highest_num/2
+# If answer is higher than guess:
+#  lowest_num = guess
+#loop until answer is lower than the guess:
+#  highest_num = guess
+#
+
 lowest_num=0
 highest_num=100
 equal='equal'
@@ -18,23 +25,26 @@ print ('Welcome to the game! Think of a number that is between {} and {}, and I 
 
 while feedback != equal:
 
-    print("current guess range is {}-{}.".format(lowest_num,highest_num))
+    #for testing purpose:
+    #print("current guess range is {}-{}.".format(lowest_num,highest_num))
 
 
-    guess = random.randint(lowest_num,highest_num)
+    guess = ((highest_num-lowest_num)//2)+lowest_num
 
-
-    feedback=input('Is the number equal, greater than or less than {} ?'.format(guess))
-    if feedback == 'equal':
+    feedback=input('Is the number =, > or < {} ?'.format(guess))
+    if feedback == '=':
         print ("Yay! I got it correct! I know I'm smart!")
-    elif feedback == 'greater than':
+        break
+    #when answer > guess, set guess as lowest_num
+    elif feedback == '>':
         lowest_num = guess
 
-    elif feedback == 'less than':
+    #when answer < guess, set guess as new highest_num
+    elif feedback == '<':
         highest_num = guess
 
     else:
-        print("Sorry, I dont't understand. Please enter 'equal', 'greater than' or 'less than' for me.")
+        print("Sorry, I dont't understand. Please enter '=', '>' or '<' for me.")
         
 
 
